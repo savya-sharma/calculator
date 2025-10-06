@@ -1,17 +1,15 @@
 const displayTxt = document.querySelector('#display');
-const numberBtns = document.querySelectorAll('.number');  // Plural for clarity
+const numberBtns = document.querySelectorAll('.number');  
 const operatorBtns = document.querySelectorAll('.operator');
-const equalBtn = document.querySelector('.equal');  // Renamed for clarity
+const equalBtn = document.querySelector('.equal');  
 
 
 numberBtns.forEach((numberBtn) => {
     numberBtn.addEventListener('click', function () {
-        // Optional: console.log(numberBtn.textContent);  // Debug: Logs on click
         displayTxt.textContent += numberBtn.textContent;
     });
 });
 
-// Handle operator buttons (including equals)
 operatorBtns.forEach((opBtn) => {
     opBtn.addEventListener('click', (e) => {
         const clickedText = e.target.textContent;
@@ -27,7 +25,7 @@ operatorBtns.forEach((opBtn) => {
 
             } catch (error) {
                 displayTxt.textContent = 'Error';
-                setTimeout(() => { displayTxt.textContent = '0'; }, 1500);
+                setTimeout(() => { displayTxt.textContent = '0'; }, 10);
             }
         } else {
             displayTxt.textContent += clickedText;
