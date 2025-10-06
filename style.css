@@ -1,0 +1,172 @@
+@font-face {
+    font-family: neueMachina;
+    src: url(./NeueMachina-Regular.otf);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #3a1f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: neueMachina;
+}
+
+.calculator {
+    background-color: #3a1f1f;
+    padding: 20px;
+    border-radius: 20px;
+    width: 25vw;
+    min-width: 320px;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.display {
+    background-color: #3a1f1f;
+    padding: 40px 20px 20px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+#display {
+    color: white;
+    font-size: 64px;
+    font-weight: 300;
+    letter-spacing: -2px;
+    word-break: break-all;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.btn {
+    border: none;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    font-size: 28px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Function buttons (C, +/-, %) */
+.btn.function {
+    background-color: #a6a6a6;
+    color: black;
+}
+
+.btn.function:hover {
+    background-color: #b8b8b8;
+}
+
+
+/* Number buttons */
+.btn.number {
+    background-color: #333;
+    color: white;
+}
+
+.btn.number:hover {
+    background-color: #404040;
+}
+
+
+
+/* Operator buttons */
+.btn.operator {
+    background-color: #ff9500;
+    color: white;
+}
+
+.btn.operator:hover {
+    background-color: #ffad33;
+}
+
+/* Zero button spans 2 columns */
+.btn.zero {
+    grid-column: span 2;
+    border-radius: 35px;
+    width: 145px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .calculator {
+        width: 95vw;
+        min-width: unset;
+        max-width: unset;
+        padding: 10px;
+        border-radius: 12px;
+    }
+    .display {
+        padding: 25px 10px 10px;
+        margin-bottom: 10px;
+    }
+    #display {
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+    .btn {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+        border-radius: 50%;
+    }
+    .btn.zero {
+        width: 110px;
+        border-radius: 24px;
+    }
+    .buttons {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    .calculator {
+        width: 100vw;
+        padding: 4vw;
+        border-radius: 0;
+    }
+    .display {
+        padding: 15px 4vw 8px;
+    }
+    #display {
+        font-size: 22px;
+    }
+    .btn {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+    .btn.zero {
+        width: 80px;
+    }
+    .buttons {
+        gap: 4px;
+    }
+}
