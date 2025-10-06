@@ -115,6 +115,40 @@ body {
 }
 
 /* Responsive styles */
+
+/* Laptop screens */
+@media (max-width: 1024px) {
+    .calculator {
+        width: 60vw;
+        min-width: 320px;
+        max-width: 500px;
+        padding: 18px;
+        border-radius: 18px;
+    }
+    .display {
+        padding: 32px 16px 16px;
+        margin-bottom: 16px;
+    }
+    #display {
+        font-size: 44px;
+        letter-spacing: -1.5px;
+    }
+    .btn {
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+        border-radius: 50%;
+    }
+    .btn.zero {
+        width: 180px;
+        border-radius: 30px;
+    }
+    .buttons {
+        gap: 14px;
+    }
+}
+
+/* Tablet and large phone */
 @media (max-width: 600px) {
     .calculator {
         width: 95vw;
@@ -146,6 +180,7 @@ body {
     }
 }
 
+/* Small phone */
 @media (max-width: 400px) {
     .calculator {
         width: 100vw;
